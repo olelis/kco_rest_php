@@ -56,7 +56,7 @@ class ResponseValidator
     /**
      * Asserts the HTTP response status code.
      *
-     * @param string|string[] $status Expected status code(s)
+     * @param string|stringArray() $status Expected status code(s)
      *
      * @throws \RuntimeException If status code does not match
      *
@@ -166,6 +166,7 @@ class ResponseValidator
             throw new \RuntimeException('Response is missing a Location header');
         }
 
-        return $this->response->getHeader('Location')[0];
+        $answer=$this->response->getHeader('Location');
+        return $answer[0];
     }
 }

@@ -65,7 +65,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->mock = new MockHandler();
-        $this->history = [];
+        $this->history = Array();
 
         $stack = HandlerStack::create($this->mock);
         $stack->push(Middleware::history($this->history));

@@ -73,7 +73,7 @@ class Transactions extends Resource
      *
      * @return array Transactions data
      */
-    public function getTransactions(array $params = [])
+    public function getTransactions(array $params = Array())
     {
         return $this->get(self::$path . '?' . http_build_query($params))
             ->status('200')

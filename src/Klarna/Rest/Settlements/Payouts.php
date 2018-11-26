@@ -102,7 +102,7 @@ class Payouts extends Resource
      *
      * @return array Payouts data
      */
-    public function getAllPayouts(array $params = [])
+    public function getAllPayouts(array $params = array())
     {
         return $this->get(self::$path . '?' . http_build_query($params))
             ->status('200')
@@ -126,7 +126,7 @@ class Payouts extends Resource
      *
      * @return array summary of payouts
      */
-    public function getSummary(array $params = [])
+    public function getSummary(array $params = array())
     {
         return $this->get(self::$path . '/summary?' . http_build_query($params))
             ->status('200')

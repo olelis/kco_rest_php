@@ -130,7 +130,7 @@ class ResourceTest extends TestCase
         ->method('send')
         ->will($this->returnValue(new Response(
             '200',
-            ['Content-Type' => 'application/json'],
+            array('Content-Type' => 'application/json'),
             '{"id": "new_id"}'
         )));
 
@@ -153,7 +153,7 @@ class ResourceTest extends TestCase
         ->method('send')
         ->will($this->returnValue(new Response(
             '200',
-            ['Content-Type' => 'application/json'],
+            array('Content-Type' => 'application/json'),
             '{"id": "new_id"}'
         )));
 

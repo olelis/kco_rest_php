@@ -198,7 +198,7 @@ class ConnectorTest extends TestCase
             ->with('Content-Type')
             ->will($this->returnValue(['application/json']));
 
-        $data = [];
+        $data = Array();
 
         $this->response->expects($this->once())
             ->method('getBody')

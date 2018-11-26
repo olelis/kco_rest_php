@@ -212,7 +212,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -322,7 +322,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures/2/shipping-info',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -354,7 +354,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures/2/shipping-info',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -392,7 +392,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures/2/customer-details',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -424,7 +424,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures/2/customer-details',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -460,7 +460,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures/2/trigger-send-out',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -489,7 +489,7 @@ class CaptureTest extends TestCase
             ->with(
                 '/orders/1/captures/2/trigger-send-out',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 

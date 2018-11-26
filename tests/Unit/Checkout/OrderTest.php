@@ -60,7 +60,7 @@ class OrderTest extends TestCase
             ->with(
                 '/checkout/v3/orders',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -149,7 +149,7 @@ class OrderTest extends TestCase
 
         $this->response->method('getHeader')
             ->withConsecutive(['Content-Type'], ['Location'])
-            ->willReturnOnConsecutiveCalls([], []);
+            ->willReturnOnConsecutiveCalls(Array(), Array());
 
         $order = new Order($this->connector);
 
@@ -217,7 +217,7 @@ class OrderTest extends TestCase
             ->with(
                 '/checkout/v3/orders/12345',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($updateData)
             )
             ->will($this->returnValue($this->request));
@@ -342,7 +342,7 @@ class OrderTest extends TestCase
             ->with(
                 '/checkout/v3/orders/12345',
                 'GET',
-                []
+                Array()
             )
             ->will($this->returnValue($this->request));
 
@@ -395,7 +395,7 @@ class OrderTest extends TestCase
             ->with(
                 '/checkout/v3/orders/12345',
                 'GET',
-                []
+                Array()
             )
             ->will($this->returnValue($this->request));
 

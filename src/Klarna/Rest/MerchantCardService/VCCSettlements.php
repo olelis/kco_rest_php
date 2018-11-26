@@ -107,7 +107,7 @@ class VCCSettlements extends Resource
         $data = $this->request(
             'GET',
             self::$path . "/$settlementId",
-            ['KeyId' => $keyId]
+            array('KeyId' => $keyId)
         )->status('200')
         ->contentType('application/json')
         ->getJson();
@@ -136,7 +136,7 @@ class VCCSettlements extends Resource
         $data = $this->request(
             'GET',
             self::$path . "/order/$orderId",
-            ['KeyId' => $keyId]
+            array('KeyId' => $keyId)
         )->status('200')
         ->contentType('application/json')
         ->getJson();

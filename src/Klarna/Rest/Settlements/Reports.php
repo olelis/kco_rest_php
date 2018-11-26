@@ -118,7 +118,7 @@ class Reports extends Resource
      *
      * @return string CSV Summary report
      */
-    public function getCSVPayoutsSummaryReport(array $params = [])
+    public function getCSVPayoutsSummaryReport(array $params = array())
     {
         return $this->get(self::$path . '/payouts-summary-with-transactions?' . http_build_query($params))
             ->status('200')
@@ -142,7 +142,7 @@ class Reports extends Resource
      *
      * @return string PDF Summary report
      */
-    public function getPDFPayoutsSummaryReport(array $params = [])
+    public function getPDFPayoutsSummaryReport(array $params = Array())
     {
         return $this->get(self::$path . '/payouts-summary?' . http_build_query($params))
             ->status('200')

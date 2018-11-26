@@ -89,7 +89,7 @@ class ConnectorTest extends TestCase
 JSON;
         $response = new Response(
             500,
-            ['Content-Type' => 'application/json'],
+            array('Content-Type' => 'application/json'),
             $json
         );
         $this->mock->append($response);

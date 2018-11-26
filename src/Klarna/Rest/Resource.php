@@ -137,7 +137,7 @@ abstract class Resource extends \ArrayObject
      * @return ResponseValidator When the API replies with an error response
      *
      */
-    protected function request($method, $url, array $headers = [], $body = '')
+    protected function request($method, $url, array $headers = Array(), $body = '')
     {
         $debug = getenv('DEBUG_SDK') || defined('DEBUG_SDK');
 
@@ -206,7 +206,7 @@ DEBUG_BODY;
         return $this->request(
             'DELETE',
             $url,
-            ['Content-Type' => 'application/json'],
+            array('Content-Type' => 'application/json'),
             $data !== null ? json_encode($data) : null
         );
     }
@@ -225,7 +225,7 @@ DEBUG_BODY;
      */
     protected function patch($url, array $data)
     {
-        return $this->request('PATCH', $url, ['Content-Type' => 'application/json'], json_encode($data));
+        return $this->request('PATCH', $url, array('Content-Type' => 'application/json'), json_encode($data));
     }
 
     /**
@@ -245,7 +245,7 @@ DEBUG_BODY;
         return $this->request(
             'POST',
             $url,
-            ['Content-Type' => 'application/json'],
+            array('Content-Type' => 'application/json'),
             $data !== null ? \json_encode($data) : null
         );
     }

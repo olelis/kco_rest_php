@@ -41,7 +41,7 @@ class UserAgent implements UserAgentInterface
      *
      * @var array
      */
-    protected $fields = [];
+    protected $fields = Array();
 
 
     /**
@@ -54,11 +54,11 @@ class UserAgent implements UserAgentInterface
      *
      * @return self
      */
-    public function setField($key, $name, $version = '', array $options = [])
+    public function setField($key, $name, $version = '', array $options = Array())
     {
-        $field = [
+        $field = array(
             'name' => $name
-        ];
+        );
 
         if (!empty($version)) {
             $field['version'] = $version;
@@ -80,7 +80,7 @@ class UserAgent implements UserAgentInterface
      */
     public function __toString()
     {
-        $parts = [];
+        $parts = Array();
 
         foreach ($this->fields as $key => $value) {
             $component = "{$key}/{$value['name']}";
@@ -110,9 +110,10 @@ class UserAgent implements UserAgentInterface
     {
         $agent = new static();
 
-        $options = ['Guzzle/' . ClientInterface::VERSION];
+        $options = array('Guzzle/' . ClientInterface::VERSION);
         if (extension_loaded('curl')) {
-            $options[] = 'curl/' . curl_version()['version'];
+            $version=curl_version();
+            $options[] = 'curl/' . $version['version'];
         }
 
         return $agent

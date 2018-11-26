@@ -64,7 +64,7 @@ interface ConnectorInterface
      * @return RequestInterface
      *
      */
-    public function createRequest($url, $method = 'GET', array $headers = [], $body = '');
+    public function createRequest($url, $method = 'GET', array $headers = Array(), $body = '');
 
     /**
      * Sends the request.

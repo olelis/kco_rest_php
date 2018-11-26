@@ -211,7 +211,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/acknowledge',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -240,7 +240,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/acknowledge',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -275,7 +275,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/cancel',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -304,7 +304,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/cancel',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -341,7 +341,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/authorization',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -373,7 +373,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/authorization',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -409,7 +409,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/extend-authorization-time',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -438,7 +438,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/extend-authorization-time',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -475,7 +475,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/merchant-references',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -507,7 +507,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/merchant-references',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -545,7 +545,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/customer-details',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -577,7 +577,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/customer-details',
                 'PATCH',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -615,7 +615,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/refunds',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -657,7 +657,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/refunds',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 \json_encode($data)
             )
             ->will($this->returnValue($this->request));
@@ -693,7 +693,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/release-remaining-authorization',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -722,7 +722,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/release-remaining-authorization',
                 'POST',
-                ['Content-Type' => 'application/json']
+                array('Content-Type' => 'application/json')
             )
             ->will($this->returnValue($this->request));
 
@@ -759,7 +759,7 @@ class OrderTest extends TestCase
             ->with(
                 '/ordermanagement/v1/orders/12345/captures',
                 'POST',
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 json_encode($data)
             )
             ->will($this->returnValue($this->request));

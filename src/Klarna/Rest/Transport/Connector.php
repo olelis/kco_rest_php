@@ -99,9 +99,9 @@ class Connector implements ConnectorInterface
      *
      * @return RequestInterface
      */
-    public function createRequest($url, $method = 'GET', array $headers = [], $body = null)
+    public function createRequest($url, $method = 'GET', array $headers = Array(), $body = null)
     {
-        $headers = array_merge($headers, ['User-Agent' => strval($this->userAgent)]);
+        $headers = array_merge($headers, array('User-Agent' => strval($this->userAgent)));
         return new Request($method, $url, $headers, $body);
     }
 
@@ -109,7 +109,7 @@ class Connector implements ConnectorInterface
      * Sends the request.
      *
      * @param RequestInterface $request Request to send
-     * @param string[] $options Request options
+     * @param stringArray() $options Request options
      *
      * @throws ConnectorException If the API returned an error response
      * @throws RequestException   When an error is encountered
@@ -117,9 +117,9 @@ class Connector implements ConnectorInterface
      *
      * @return ResponseInterface
      */
-    public function send(RequestInterface $request, array $options = [])
+    public function send(RequestInterface $request, array $options = Array())
     {
-        $options['auth'] = [$this->merchantId, $this->sharedSecret, 'basic'];
+        $options['auth'] = array($this->merchantId, $this->sharedSecret, 'basic');
 
         try {
             return $this->client->send($request, $options);
@@ -180,7 +180,7 @@ class Connector implements ConnectorInterface
         $baseUrl = self::EU_BASE_URL,
         UserAgentInterface $userAgent = null
     ) {
-        $client = new Client(['base_uri' => $baseUrl]);
+        $client = new Client(array('base_uri' => $baseUrl));
 
         return new static($client, $merchantId, $sharedSecret, $userAgent);
     }

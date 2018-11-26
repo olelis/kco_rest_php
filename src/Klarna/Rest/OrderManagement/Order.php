@@ -83,7 +83,7 @@ class Order extends Resource
 
         // Convert captures data to Capture[]
 
-        $captures = [];
+        $captures = array();
         foreach ($this['captures'] as $capture) {
             $captureId = $capture[Capture::ID_FIELD];
 
@@ -102,7 +102,7 @@ class Order extends Resource
 
         // Convert refunds data to Refund[]
         if (isset($this['refunds'])) {
-            $refunds = [];
+            $refunds = array();
             foreach ($this['refunds'] as $refund) {
                 $refundId = null;
                 if (isset($refund[Refund::ID_FIELD])) {

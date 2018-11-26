@@ -75,7 +75,7 @@ JSON;
         $this->mock->append(
             new Response(
                 200,
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 $json
             )
         );
@@ -115,7 +115,7 @@ JSON;
         $this->mock->append(
             new Response(
                 200,
-                ['Content-Type' => 'application/json'],
+                array('Content-Type' => 'application/json'),
                 $json
             )
         );
