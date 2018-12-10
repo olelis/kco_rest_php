@@ -24,7 +24,9 @@
     "prefer-stable": true,
     "require": {
         "php": ">=5.3.0",
-        "guzzlehttp/guzzle": "dev-php53"
+        "guzzlehttp/guzzle": "dev-php53",
+        "ext-json": "*",
+        "ext-curl": "*"
     },
     "repositories": [
         {
@@ -41,7 +43,8 @@
         "php-coveralls/php-coveralls": "^2.1",
         "phpunit/phpcov": "^2.0",
         "apigen/apigen": "4.0.*",
-        "klarna/apigen-theme": "~2.0"
+        "klarna/apigen-theme": "~2.0",
+        "ext-json": "*"
     },
     "scripts": {
         "test": "vendor/bin/phpunit --colors",
