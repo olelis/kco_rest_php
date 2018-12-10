@@ -19,7 +19,7 @@
 
 namespace Klarna\Rest;
 
-use GuzzleHttp\Exception\RequestException;
+use Guzzle\Http\Exception\RequestException;
 use Klarna\Rest\Transport\Connector;
 use Klarna\Rest\Transport\Exception\ConnectorException;
 use Klarna\Rest\Transport\ResponseValidator;
@@ -141,6 +141,7 @@ abstract class Resource extends \ArrayObject
     {
         $debug = getenv('DEBUG_SDK') || defined('DEBUG_SDK');
 
+        $url = $this->connector->getClient()->getBaseUrl().$url;
         $request = $this->connector->createRequest($url, $method, $headers, $body);
         if ($debug) {
             $clientConfig = $this->connector->getClient()->getConfig();

@@ -19,7 +19,7 @@
 
 namespace Klarna\Rest\Settlements;
 
-use GuzzleHttp\Exception\RequestException;
+use Guzzle\Http\Exception\RequestException;
 use Klarna\Exceptions\NotApplicableException;
 use Klarna\Rest\Resource;
 use Klarna\Rest\Transport\Connector;

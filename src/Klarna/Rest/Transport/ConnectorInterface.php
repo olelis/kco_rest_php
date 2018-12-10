@@ -19,11 +19,11 @@
 
 namespace Klarna\Rest\Transport;
 
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
+use Guzzle\Http\ClientInterface;
+use Guzzle\Http\Exception\RequestException;
 use Klarna\Rest\Transport\Exception\ConnectorException;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response as ResponseInterface;
 
 /**
  * HTTP transport connector interface used to authenticate and make HTTP requests

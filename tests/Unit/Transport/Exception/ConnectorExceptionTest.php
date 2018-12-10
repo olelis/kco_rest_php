@@ -22,7 +22,7 @@ namespace Klarna\Rest\Tests\Unit\Transport\Exception;
 use GuzzleHttp\Exception\RequestException;
 use Klarna\Rest\Transport\Exception\ConnectorException;
 use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use Guzzle\Http\Message\Response as ResponseInterface;
 
 /**
  * Unit test cases for the ConnectorException.

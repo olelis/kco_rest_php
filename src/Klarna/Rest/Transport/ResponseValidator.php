@@ -19,7 +19,7 @@
 
 namespace Klarna\Rest\Transport;
 
-use Psr\Http\Message\ResponseInterface;
+use Guzzle\Http\Message\Response as ResponseInterface;
 
 /**
  * HTTP response validator helper class.
@@ -166,7 +166,7 @@ class ResponseValidator
             throw new \RuntimeException('Response is missing a Location header');
         }
 
-        $answer=$this->response->getHeader('Location');
+        $answer=$this->response->getHeader('Location')->toArray();
         return $answer[0];
     }
 }

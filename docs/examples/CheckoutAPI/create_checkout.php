@@ -14,14 +14,14 @@ $connector = Klarna\Rest\Transport\Connector::create(
     Klarna\Rest\Transport\ConnectorInterface::EU_TEST_BASE_URL
 );
 
-$order = [
+$order = array(
     "purchase_country" => "gb",
     "purchase_currency" => "gbp",
     "locale" => "en-gb",
     "order_amount" => 10000,
     "order_tax_amount" => 2000,
-    "order_lines" => [
-        [
+    "order_lines" => array(
+        array(
             "type" => "physical",
             "reference" => "123050",
             "name" => "Tomatoes",
@@ -31,8 +31,8 @@ $order = [
             "tax_rate" => 2500,
             "total_amount" => 6000,
             "total_tax_amount" => 1200
-        ],
-        [
+        ),
+        array(
             "type" => "physical",
             "reference" => "543670",
             "name" => "Bananas",
@@ -43,15 +43,15 @@ $order = [
             "total_amount" => 4000,
             "total_discount_amount" => 1000,
             "total_tax_amount" => 800
-        ]
-    ],
-    "merchant_urls" => [
+        )
+    ),
+    "merchant_urls" => array(
         "terms" => "http://www.merchant.com/toc",
         "checkout" => "http://www.merchant.com/checkout?klarna_order_id={checkout.order.id}",
         "confirmation" => "http://www.merchant.com/thank-you?klarna_order_id={checkout.order.id}",
         "push" => "http://www.merchant.com/create_order?klarna_order_id={checkout.order.id}"
-    ]
-];
+    )
+);
 
 try {
     $checkout = new Klarna\Rest\Checkout\Order($connector);

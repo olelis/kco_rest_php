@@ -19,13 +19,13 @@
 
 namespace Klarna\Rest\Transport;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Request;
+use Guzzle\Http\Client;
+use Guzzle\Http\ClientInterface;
+use Guzzle\Http\Exception\RequestException;
+use Guzzle\Http\Message\Request;
 use Klarna\Rest\Transport\Exception\ConnectorException;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response as ResponseInterface;
 
 /**
  * Transport connector used to authenticate and make HTTP requests against the
@@ -66,7 +66,7 @@ class Connector implements ConnectorInterface
      *
      * Example usage:
      *
-     *     $client = new \GuzzleHttp\Client(['base_url' => 'https://api.klarna.com']);
+     *     $client = new \Guzzle\Http\Client(['base_url' => 'https://api.klarna.com']);
      *     $connector = new \Klarna\Transport\Connector($client, '0', 'sharedSecret');
      *
      *
@@ -102,7 +102,11 @@ class Connector implements ConnectorInterface
     public function createRequest($url, $method = 'GET', array $headers = Array(), $body = null)
     {
         $headers = array_merge($headers, array('User-Agent' => strval($this->userAgent)));
-        return new Request($method, $url, $headers, $body);
+
+        $options['auth'] = array($this->merchantId, $this->sharedSecret, 'basic');
+
+        return $this->client->createRequest($method,$url,$headers,$body,$options);
+
     }
 
     /**
@@ -124,9 +128,12 @@ class Connector implements ConnectorInterface
         try {
             return $this->client->send($request, $options);
         } catch (RequestException $e) {
-            if (!$e->hasResponse()) {
+            if(!method_exists($e,'getResponse')){
                 throw $e;
             }
+         /*   if (!$e->hasResponse()) {
+                throw $e;
+            }*/
 
             $response = $e->getResponse();
 
@@ -180,7 +187,7 @@ class Connector implements ConnectorInterface
         $baseUrl = self::EU_BASE_URL,
         UserAgentInterface $userAgent = null
     ) {
-        $client = new Client(array('base_uri' => $baseUrl));
+        $client = new Client($baseUrl);
 
         return new static($client, $merchantId, $sharedSecret, $userAgent);
     }

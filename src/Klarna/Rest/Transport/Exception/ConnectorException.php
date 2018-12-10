@@ -19,8 +19,8 @@
 
 namespace Klarna\Rest\Transport\Exception;
 
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Message\ResponseInterface;
+use Guzzle\Http\Exception\RequestException;
+use Guzzle\Http\Message\ResponseInterface;
 
 /**
  * ConnectorException is used to represent a API error response.

@@ -19,7 +19,7 @@
 
 namespace Klarna\Rest\Transport;
 
-use GuzzleHttp\ClientInterface;
+use Guzzle\Http\ClientInterface;
 
 /**
  * HTTP user agent.
@@ -110,7 +110,7 @@ class UserAgent implements UserAgentInterface
     {
         $agent = new static();
 
-        $options = array('Guzzle/' . ClientInterface::VERSION);
+        $options = array('Guzzle/v3.8.1' );
         if (extension_loaded('curl')) {
             $version=curl_version();
             $options[] = 'curl/' . $version['version'];

@@ -20,7 +20,7 @@
 namespace Klarna\Rest\Tests\Unit\Transport;
 
 use Klarna\Rest\Transport\ResponseValidator;
-use Psr\Http\Message\ResponseInterface;
+use Guzzle\Http\Message\Response as ResponseInterface;
 
 /**
  * Unit test cases for the ResponseValidator class.
